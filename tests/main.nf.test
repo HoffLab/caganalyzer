@@ -1,0 +1,22 @@
+nextflow_pipeline {
+
+    name "Test pipeline: NFCORE_PHAGEANNOTATOR"
+    script "main.nf"
+    tag "PIPELINE"
+
+
+    test("Parameters: default") {
+        when {
+            params {
+                outdir  = "$outputDir"
+                input   = "$projectDir/assets/v0.0.1-alpha/samplesheet.csv"
+            }
+        }
+
+        then {
+            assertAll(
+                { assert workflow.success }
+            )
+        }
+    }
+}
