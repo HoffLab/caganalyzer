@@ -1,6 +1,6 @@
 nextflow_pipeline {
 
-    name "Test pipeline: NFCORE_PHAGEANNOTATOR"
+    name "Test pipeline: HOFFLAB_CAGANALYZER"
     script "main.nf"
     tag "PIPELINE"
 
