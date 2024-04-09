@@ -1,0 +1,22 @@
+nextflow_pipeline {
+
+    name "Test pipeline: HOFFLAB_CAGANALYZER"
+    script "main.nf"
+    tag "PIPELINE"
+
+
+    test("Parameters: default") {
+        when {
+            params {
+                outdir  = "$outputDir"
+                input   = "$projectDir/assets/v0.0.1-alpha/samplesheet.csv"
+            }
+        }
+
+        then {
+            assertAll(
+                { assert workflow.success }
+            )
+        }
+    }
+}
